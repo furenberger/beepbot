@@ -1,15 +1,35 @@
 {
   "name": "beepbot",
   "version": "1.0.0",
-  "description": "slackbot using botkit",
-  "main": "index.js",
+  "description": "A starter kit for building a custom Slack bot with Botkit Studio",
+  "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node robot.js"
+    "start": "node bot.js"
   },
-  "author": "furenberger",
-  "license": "ISC",
   "dependencies": {
-    "botkit": "^0.5.2"
-  }
+    "body-parser": "^1.15.2",
+    "botkit": "^0.5",
+    "dashbot": "0.7.4",
+    "debug": "^2.3.3",
+    "express": "^4.14.0",
+    "querystring": "^0.2.0",
+    "request": "^2.79.0",
+    "wordfilter": "^0.2.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/furenberger/beepbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/furenberger/beepbot/issues"
+  },
+  "homepage": "https://github.com/furenberger/beepbot",
+  "keywords": [
+    "bots",
+    "chatbots",
+    "slack"
+  ],
+  "author": "furenberger",
+  "license": "ISC"
 }
