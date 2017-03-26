@@ -1,0 +1,15 @@
+{
+  "name": "beepbot",
+  "version": "1.0.0",
+  "description": "slackbot using botkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node robot.js"
+  },
+  "author": "furenberger",
+  "license": "ISC",
+  "dependencies": {
+    "botkit": "^0.5.2"
+  }
+}
