@@ -1,1 +1,1 @@
-token=process.env.token node slack_bot.js
+worker: node slack_bot.js
