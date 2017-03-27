@@ -81,17 +81,17 @@ askFlavor = function(response, convo) {
     askSize(response, convo);
     convo.next();
   });
-}
+};
 askSize = function(response, convo) {
   convo.ask("What size do you want?", function(response, convo) {
-    convo.say("Ok.")
+    convo.say("Ok.");
     askWhereDeliver(response, convo);
     convo.next();
   });
-}
+};
 askWhereDeliver = function(response, convo) { 
   convo.ask("So where do you want it delivered?", function(response, convo) {
     convo.say("Ok! Goodbye.");
     convo.next();
   });
-}
+};

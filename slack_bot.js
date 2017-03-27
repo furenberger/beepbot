@@ -74,12 +74,23 @@ var os = require('os');
 
 var controller = Botkit.slackbot({
     debug: false,
+    stats_optout: true
 });
 
 var bot = controller.spawn({
     token: process.env.token
 }).startRTM();
 
+
+//dynamically pull in the skulls!
+var normalizedPath = require("path").join(__dirname, "skills");
+require("fs").readdirSync(normalizedPath).forEach(function(file) {
+    require("./skills/" + file)(controller);
+});
+
+
+
+//default stuff
 controller.hears(['hello', 'hi'], 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.api.reactions.add({
@@ -157,7 +168,7 @@ controller.hears(['what is my name', 'who am i'], 'direct_message,direct_mention
                     }, {'key': 'nickname'}); // store the results in a field called nickname
 
                     convo.on('end', function(convo) {
-                        if (convo.status == 'completed') {
+                        if (convo.status === 'completed') {
                             bot.reply(message, 'OK! I will update my dossier...');
 
                             controller.storage.users.get(message.user, function(err, user) {
