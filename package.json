@@ -37,7 +37,8 @@
   },
   "scripts": {
     "pretest": "jscs ./lib/",
-    "test": "mocha tests/*.js"
+    "test": "mocha tests/*.js",
+    "start" : "token=process.env.TOKEN node slack_bot.js"
   },
   "repository": {
     "type": "git",
